@@ -1,0 +1,19 @@
+% Define which birds can fly
+can_fly(hawk).
+can_fly(eagle).
+can_fly(albatross).
+can_fly(sparrow).
+can_fly(pigeon).
+
+% Define rules for querying whether a bird can fly
+can_fly_message(Bird) :-
+    can_fly(Bird),
+    write(Bird), write(' can fly.').
+
+can_fly_message(Bird) :-
+    \+ can_fly(Bird),
+    write(Bird), write(' cannot fly.').
+
+% Sample queries
+% ?- can_fly_message(hawk).
+% ?- can_fly_message(penguin).
